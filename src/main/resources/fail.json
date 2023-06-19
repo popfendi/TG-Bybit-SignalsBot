@@ -1,0 +1,8 @@
+this is an example event from WS price updates
+{
+  "success": false,
+  "ret_msg": "error:handler not found,topic:tickers.BTC/USDT",
+  "conn_id": "018cea05-7a38-4b49-b573-cc6a895ee8de",
+  "req_id": "",
+  "op": "subscribe"
+}

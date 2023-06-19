@@ -1,0 +1,19 @@
+this is an example event from WS price updates
+{
+  "topic": "tickers.BTCUSDT",
+  "type": "delta",
+  "data": {
+    "symbol": "BTCUSDT",
+    "price24hPcnt": "-0.401457",
+    "markPrice": "19915.98",
+    "indexPrice": "19915.54",
+    "openInterestValue": "1606768449.22",
+    "fundingRate": "0.0001",
+    "bid1Price": "19911.50",
+    "bid1Size": "45.520",
+    "ask1Price": "19913.50",
+    "ask1Size": "74.114"
+  },
+  "cs": 8008666710,
+  "ts": 1678452534084
+}

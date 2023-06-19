@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+
+  signals-mongodb:
+    image: mongo
+    container_name: signals-mongodb
+    restart: always
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    volumes:
+      - ~/mongo/data:/data/db
+
+  signal-bot:
+    image: signal-bot
+    container_name: signal-bot
+    restart: always
+    depends_on:
+      - signals-mongodb
+    environment:
+      API_KEY: your bybit api key
+      API_SECRET: your bybit api secret
+      API_URL: wss://stream-testnet.bybit.com/v5/public/linear
+      BOT_KEY: your tg bot key
+      CHANNEL_ID: your channel id #where the bot reads the signals from
+      ADMIN_CHAT_ID: your admin chat #where the bot sends errors msgs to
+      MONGO_DB_URL: mongodb://root:example@signals-mongodb:27017/
